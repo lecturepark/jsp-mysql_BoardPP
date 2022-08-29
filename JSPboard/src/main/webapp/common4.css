@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body{
+	background-image:url("aurora.jpg");
+	}
+	
+.signup {
+  
+  color: red;
+ 
+}
+.gender {
+  margin : top;
+  color: red;
+ 
+}
