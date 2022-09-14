@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 페이지</title>
+<link rel="stylesheet" href="common4.css">
+
+
+</head>
+<body>
+<div align="left" style="width:40%; height: 350px; border: 5px solid blue; border-radius: 1em;">
+<script>
+function noSpaceForm(obj) { // 공백사용못하게
+    var str_space = /\s/;  // 공백체크
+    if(str_space.exec(obj.value)) { //공백 체크
+        alert("해당 항목에는 공백을 사용할수 없습니다.\n\n공백은 자동적으로 제거 됩니다.");
+        obj.focus();
+        obj.value = obj.value.replace(/\s| /gi,''); // 공백제거
+        return false;
+    }
+}
+</script>
+<h1><p class="signup">회원가입</p></h1>
+<form action="signup.jsp" method="get">
+	<input type='text' class="form-control" placeholder="아이디" name="id" maxlength="20" minlength="6" pattern="^[a-zA-Z0-9]+$" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"><br>
+	<input type='password' class="form-control" placeholder="비밀번호" name="pw" class = "pw" id = "pw1" minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]+$" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"><br>
+	<input type='password' class="form-control" placeholder="비밀번호재입력" name="repw" class = "pw" id = "pw2" minlength="6" maxlength="20" pattern="^[a-zA-Z0-9]+$" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"><br>
+	<input type='tel' class="form-control" placeholder="전화번호 (-)없이 입력" name="tel" class = "tel" id = "tel" minlength="6" maxlength="11" pattern="^[0-9]+$" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"><br>
+	<p class="gender">성별
+	<input type="radio" name="gender" value="남" checked>남
+	<input type="radio" name="gender" value="여">여
+	</p>
+	<input type="text" class="form-control" placeholder="취미" name="hobby" class = "hobby" id = "hobby" minlength="1" maxlength="20" onchange="noSpaceForm(this);"><br>
+	<input type="submit" value="회원가입">
+</form>
+<br>
+<form action="index.html" method="get">
+<input type="submit" value="로그인페이지">
+</form>
+	</div>
+</body>
+</html>
